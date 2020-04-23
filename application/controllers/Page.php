@@ -10,7 +10,8 @@ class Page extends CI_Controller{
   function index(){
     //Allowing akses to admin only
       if($this->session->userdata('level')==='1'){
-        $this->load->view('navbar/header_admin');$data['judul'] = 'Beranda';
+      $data['judul'] = 'Beranda';
+        $this->load->view('navbar/header_admin', $data);
 		$this->load->view('admin/index');
       }else{
           echo "Access Denied";
