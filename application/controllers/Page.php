@@ -36,5 +36,10 @@ class Page extends CI_Controller
     {
       $this->load->view('register/index');
     }
+    
+    function hasil_test(){
+       $this->load->view('userPage/index');
+    }
+    
   }
 }
