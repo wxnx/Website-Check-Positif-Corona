@@ -38,7 +38,7 @@ class Register extends CI_Controller {
 				);
 				$result = $this->login_model->insert_new_profle($data);
 				$this->session->set_userdata($result);
-				redirect('page/user');
+				redirect('login');
 		    
 		}
 	}
