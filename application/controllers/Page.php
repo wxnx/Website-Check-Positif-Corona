@@ -10,7 +10,7 @@ class Page extends CI_Controller{
   function index(){
     //Allowing akses to admin only
       if($this->session->userdata('level')==='1'){
-          $this->load->view('dashboard_view');
+          $this->load->view('admin/index');
       }else{
           echo "Access Denied";
       }
@@ -20,19 +20,11 @@ class Page extends CI_Controller{
   function staff(){
     //Allowing akses to staff only
     if($this->session->userdata('level')==='2'){
-      $this->load->view('dashboard_view');
+      $this->load->view('user/index');
     }else{
         echo "Access Denied";
     }
   }
 
-  function author(){
-    //Allowing akses to author only
-    if($this->session->userdata('level')==='3'){
-      $this->load->view('dashboard_view');
-    }else{
-        echo "Access Denied";
-    }
-  }
 
 }
