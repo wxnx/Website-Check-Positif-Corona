@@ -22,6 +22,7 @@
              </label>
            </div>
            <button class="btn btn-lg btn-primary btn-block" type="submit">Sign in</button>
+		   <p>Belum punya akun? Silahkan Daftar <a href="<?= site_url('register/index') ?>">Disini</a></p>
          </form>
        </div>
        </div> <!-- /container -->

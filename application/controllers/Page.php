@@ -27,6 +27,11 @@ class Page extends CI_Controller{
     }else{
         echo "Access Denied";
     }
+	
+	function registration(){
+		$this->load->view('register/index');
+    
+    }
   }
 
 
