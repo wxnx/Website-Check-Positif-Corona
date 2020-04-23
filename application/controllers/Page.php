@@ -18,8 +18,8 @@ class Page extends CI_Controller{
 
   }
 
-  function staff(){
-    //Allowing akses to staff only
+  function user(){
+    //Allowing akses to user only
     if($this->session->userdata('level')==='2'){
        $data['judul'] = 'Beranda';
        $this->load->view('navbar/header_user', $data);

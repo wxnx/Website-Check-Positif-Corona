@@ -31,7 +31,7 @@ class Login extends CI_Controller{
 
         // access logiin user 
         }elseif($level === '2'){
-            redirect('page/staff');
+            redirect('page/user');
 
         
         }
