@@ -1,4 +1,12 @@
 <!DOCTYPE html>
+<style>
+body {
+  background-image: url('https://mipa.unram.ac.id/wp-content/uploads/2019/09/Savin-NY-Website-Background-Web.jpg');
+  background-repeat: no-repeat;
+  background-attachment: fixed;
+  background-size: 100% 100%;
+}
+</style>
 <html lang="en">
   <head>
     <meta charset="utf-8">
@@ -10,7 +18,7 @@
       <div class="container">
        <div class="col-md-4 col-md-offset-4">
          <form class="form-signin" action="<?php echo site_url('login/auth');?>" method="post">
-           <h2 class="form-signin-heading">Please sign in</h2>
+           <h2 class="form-signin-heading">Sign In</h2>
            <?php echo $this->session->flashdata('msg');?>
            <label for="username" class="sr-only">Username</label>
            <input type="email" name="email" class="form-control" placeholder="Email" required autofocus>
