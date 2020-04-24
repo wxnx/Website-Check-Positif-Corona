@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 24, 2020 at 12:40 AM
+-- Generation Time: Apr 24, 2020 at 06:40 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.4
 
@@ -34,21 +34,22 @@ CREATE TABLE `tbl_users` (
   `user_password` varchar(40) DEFAULT NULL,
   `kecamatan` varchar(50) NOT NULL,
   `user_level` varchar(3) DEFAULT NULL,
-  `status_user` varchar(25) DEFAULT NULL
+  `status_user` varchar(25) DEFAULT NULL,
+  `jadwal` varchar(50) DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data for table `tbl_users`
 --
 
-INSERT INTO `tbl_users` (`user_id`, `nama`, `user_email`, `user_password`, `kecamatan`, `user_level`, `status_user`) VALUES
-(4, 'testes', 'testes@gmail.com', 'tes', 'Pondok Labu', '1', NULL),
-(6, 'farhan', 'farhan.muhammad@rocketmail.com', '123', 'Cilandak', '2', NULL),
-(7, 'jojo', 'jotaro@gmail.com', '123', 'morioh', '2', NULL),
-(8, 'beadobe', 'bdb@gmail.com', '123', 'Cicaheum', '2', NULL),
-(9, 'fur', 'fur@gmail.com', '123', 'London', '2', NULL),
-(10, 'style', 'style@gmail.com', '123', 'NYC', '2', NULL),
-(11, 'beta', 'beta@gmail.com', '123', 'Papua', '2', NULL);
+INSERT INTO `tbl_users` (`user_id`, `nama`, `user_email`, `user_password`, `kecamatan`, `user_level`, `status_user`, `jadwal`) VALUES
+(4, 'testes', 'testes@gmail.com', 'tes', 'Pondok Labu', '1', NULL, NULL),
+(6, 'farhan', 'farhan.muhammad@rocketmail.com', '123', 'Cilandak', '2', NULL, NULL),
+(7, 'jojo', 'jotaro@gmail.com', '123', 'morioh', '2', NULL, NULL),
+(8, 'beadobe', 'bdb@gmail.com', '123', 'Cicaheum', '2', NULL, NULL),
+(9, 'fur', 'fur@gmail.com', '123', 'London', '2', NULL, NULL),
+(10, 'style', 'style@gmail.com', '123', 'NYC', '2', NULL, NULL),
+(11, 'beta', 'beta@gmail.com', '123', 'Papua', '2', NULL, NULL);
 
 --
 -- Indexes for dumped tables
