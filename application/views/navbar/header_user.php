@@ -27,7 +27,7 @@
                 <div class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <a class="nav-item nav-link" href="#">Beranda</a></li>
                     <a class="nav-item nav-link" href="#">Jadwal Test</a></li>
-                    <a class="nav-item nav-link" href="<?= site_url('userPage/index') ?>">Hasil Test</a></li>
+                    <a class="nav-item nav-link" href="<?= site_url('login/hasil_test') ?>">Hasil Test</a></li>
                     <a class="nav-item nav-link" href="#">Data Persebaran Corona</a></li>
                 </div>
                 <div class="navbar-nav">

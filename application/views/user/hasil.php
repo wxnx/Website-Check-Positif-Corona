@@ -13,14 +13,12 @@
                     </tr>
                 </thead>
                 <tbody>
-                	<?php foreach ($tbl_users as $user): ?>
                     <tr>
-                            <td class="text-center"><?php echo $user['nama']?></td>
-                            <td class="text-center"><?php echo $user['user_email']?></td>
-                            <td class="text-center"><?php echo $user['kecamatan']?></td>
-                            <td class="text-center"><?php echo $user['status_user']?></td>
+                            <td class="text-center"><?php echo $this->session->userdata('nama'); ?></td>
+                            <td class="text-center"><?php echo $this->session->userdata('email'); ?></td>
+                            <td class="text-center"><?php echo $this->session->userdata('kecamatan'); ?></td>
+                            <td class="text-center"><?php echo $this->session->userdata('status'); ?></td>
                     </tr>
-             		<?php endforeach; ?>
                 </tbody>
             </table>
         </div>

@@ -9,10 +9,12 @@ class User_model extends CI_Model
         $this->db->delete('user_password');
     }
 
-    public function viewDataUser($user_id)
+    public function viewDataUser($email)
     {
         //get data mahasiswa based on id 
-        return $this->db->get_where('tbl_users', array('user_id' => $user_id))->result_array();
+        $this->db->where('user_email',$email);
+        $query = $this->db->get('tbl_users');
+        $query->row();
     }
 
     public function ubahDataPassword()

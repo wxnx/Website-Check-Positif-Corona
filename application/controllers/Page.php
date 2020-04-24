@@ -38,7 +38,7 @@ class Page extends CI_Controller
     }
     
     function hasil_test(){
-       $this->load->view('userPage/index');
+       $this->load->view('login/hasil_test');
     }
     
   }
