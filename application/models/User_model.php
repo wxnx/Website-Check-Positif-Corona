@@ -22,6 +22,15 @@ class User_model extends CI_Model
         return $this->db->get('data_penyebaran')->result_array();
     }
 
+    public function addDataPenyebaran()
+    {
+        $data = [
+            "kecamatan" => $this->input->post('kecamatan', true),
+            "jumlah" => $this->input->post('jumlah', true),
+        ];
+        $this->db->insert('data_penyebaran', $data);
+    }
+
     public function ubahDataPassword()
     {
         $data = [

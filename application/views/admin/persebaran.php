@@ -1,4 +1,4 @@
-<class="container">     
+<class="container">
     <div class="row mt-3">
         <div class="col">
             <div class="card">
@@ -7,7 +7,7 @@
                 </div>
                 <div class="card-body">
                     <form action="" method="post">
-                        div class="form-group">
+                        <div class="form-group">
                             <label for="kecamatan">Kecamatan</label>
                             <input type="text" class="form-control" id="kecamatan" name="kecamatan">
                             <small class="form-text text-danger"><?= form_error('kecamatan') ?>.</small>
@@ -24,4 +24,4 @@
 
         </div>
     </div>
-</div>
+    </div>

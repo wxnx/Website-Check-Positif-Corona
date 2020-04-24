@@ -28,7 +28,7 @@
                     <a class="nav-item nav-link" href="#">Beranda</a></li>
                     <a class="nav-item nav-link" href="#">Validasi Pasien</a></li>
                     <a class="nav-item nav-link" href="#">Input Hasil Test Pasien</a></li>
-                    <a class="nav-item nav-link" href="#">Input Data Persebaran Corona</a></li>
+                    <a class="nav-item nav-link" href="<?= site_url('data_penyebaran/tambah_data') ?>">Input Data Persebaran Corona</a></li>
                 </div>
                 <div class="navbar-nav">
                     <li><a class="nav-item nav-link" href="<?= site_url('login/index') ?>">Keluar</a></li>
