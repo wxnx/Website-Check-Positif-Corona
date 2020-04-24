@@ -28,7 +28,7 @@
                     <a class="nav-item nav-link" href="<?= site_url('page/user') ?>">Beranda</a></li>
                     <a class="nav-item nav-link" href="<?= site_url('login/jadwal_test') ?>">Jadwal Test</a></li>
                     <a class="nav-item nav-link" href="<?= site_url('login/hasil_test') ?>">Hasil Test</a></li>
-                    <a class="nav-item nav-link" href="#">Data Persebaran Corona</a></li>
+                    <a class="nav-item nav-link" href="<?= site_url('data_penyebaran/index') ?>">Data Persebaran Corona</a></li>
                 </div>
                 <div class="navbar-nav">
                     <li><a class="nav-item nav-link" href="#">Pengaturan</a></li>
