@@ -22,6 +22,7 @@ class Login extends CI_Controller{
         $level = $data['user_level'];
         $kecamatan = $data['kecamatan'];
         $status = $data['status'];
+        $status = $data['jadwal'];
         $sesdata = array(
             'id'        => $id,	
             'nama'  => $nama,
@@ -29,6 +30,7 @@ class Login extends CI_Controller{
             'level'     => $level,
             'kecamatan' => $kecamatan,
             'status'    => $status,
+            'jadwal'    => $jadwal,
             'logged_in' => TRUE
         );
         $this->session->set_userdata($sesdata);
@@ -53,6 +55,13 @@ class Login extends CI_Controller{
         $datauser['datauser'] = $this->user_model->viewDataUser($this->session->userdata('email'));
         $this->load->view('navbar/header_user', $data);
         $this->load->view('user/hasil',$datauser);
+    }
+    
+    function jadwal_test(){
+    	$data['judul'] = 'Jadwal Test COVID-19';
+        $datauser['datauser'] = $this->user_model->viewDataUser($this->session->userdata('email'));
+        $this->load->view('navbar/header_user', $data);
+        $this->load->view('user/jadwal',$datauser);
     }
   
 

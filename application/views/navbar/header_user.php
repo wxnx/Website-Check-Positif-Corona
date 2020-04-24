@@ -25,14 +25,14 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <a class="nav-item nav-link" href="#">Beranda</a></li>
-                    <a class="nav-item nav-link" href="#">Jadwal Test</a></li>
+                    <a class="nav-item nav-link" href="<?= site_url('page/user') ?>">Beranda</a></li>
+                    <a class="nav-item nav-link" href="<?= site_url('login/jadwal_test') ?>">Jadwal Test</a></li>
                     <a class="nav-item nav-link" href="<?= site_url('login/hasil_test') ?>">Hasil Test</a></li>
                     <a class="nav-item nav-link" href="#">Data Persebaran Corona</a></li>
                 </div>
                 <div class="navbar-nav">
                     <li><a class="nav-item nav-link" href="#">Pengaturan</a></li>
-                    <li><a class="nav-item nav-link" href="<?= site_url('login_view') ?>">Keluar</a></li>
+                    <li><a class="nav-item nav-link" href="<?= site_url('login/index') ?>">Keluar</a></li>
                 </div>
             </div>
         </div>

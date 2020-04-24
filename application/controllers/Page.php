@@ -41,5 +41,9 @@ class Page extends CI_Controller
        $this->load->view('login/hasil_test');
     }
     
+    function jadwal_test(){
+    	$this->load->view('login/jadwal_test');
+    }
+    
   }
 }
