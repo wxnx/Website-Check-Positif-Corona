@@ -30,8 +30,8 @@
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav mr-auto mt-2 mt-lg-0">
                     <li><a class="nav-item nav-link" href="#">Beranda</a></li>
-                    <li><a class="nav-item nav-link" href="#">Validasi Pasien</a></li>
-                    <li><a class="nav-item nav-link" href="#">Input Hasil Test Pasien</a></li>
+                    <li><a class="nav-item nav-link" href="<?= site_url('validasi_pasien/index') ?>"">Validasi Pasien</a></li>
+                    <li><a class=" nav-item nav-link" href="#">Input Hasil Test Pasien</a></li>
                     <li><a class="nav-item nav-link" href="<?= site_url('data_penyebaran/tambah_data') ?>">Input Data Persebaran Corona</a></li>
                 </div>
                 <div class="navbar-nav">

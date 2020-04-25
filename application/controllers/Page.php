@@ -51,5 +51,15 @@ class Page extends CI_Controller
     {
       $this->load->view('Data_penyebaran/index');
     }
+
+    function daftar()
+    {
+      $this->load->view('login/daftar');
+    }
+
+    function validasi()
+    {
+      $this->load->view('validasi_pasien/index');
+    }
   }
 }

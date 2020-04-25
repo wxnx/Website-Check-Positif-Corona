@@ -17,6 +17,11 @@ class User_model extends CI_Model
         $query->row();
     }
 
+    public function getPasien()
+    {
+        return $this->db->get('pasien')->result();
+    }
+
     public function viewDataPenyebaran()
     {
         return $this->db->get('data_penyebaran')->result_array();
@@ -29,6 +34,25 @@ class User_model extends CI_Model
             "jumlah" => $this->input->post('jumlah', true),
         ];
         $this->db->insert('data_penyebaran', $data);
+    }
+
+    public function sendData()
+    {
+        $data = [
+            "nama" => $this->session->userdata('nama'),
+            "email" => $this->session->userdata('email'),
+            "kecamatan" => $this->session->userdata('kecamatan'),
+            "status" => $this->session->userdata('status'),
+            "jadwal" => $this->session->userdata('jadwal'),
+        ];
+        $this->db->insert('pasien', $data);
+    }
+
+    public function inputJadwal($email, $data)
+    {
+        $this->db->where('email', $email);
+        $this->db->update('pasien', $data);
+        return TRUE;
     }
 
     public function ubahDataPassword()
