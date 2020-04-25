@@ -55,6 +55,13 @@ class User_model extends CI_Model
         return TRUE;
     }
 
+    public function inputStatus($email, $data)
+    {
+        $this->db->where('email', $email);
+        $this->db->update('pasien', $data);
+        return TRUE;
+    }
+
     public function ubahDataPassword()
     {
         $data = [

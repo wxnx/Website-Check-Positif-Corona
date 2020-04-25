@@ -1,40 +1,74 @@
-<class="container">
-    <div class="row mt-3">
-        <div class="col">
-            <div class="card">
-                <div class="card-header text-center">
-                    Form Hasil Test Covid-19
-                </div>
-                <div class="card-body">
-                    <form action="" method="post">
-                        <input type="hidden" name="id" value="<?= $user['id'] ?>">
+<div class="container">
+    <div class="box">
+        <h2>Form Hasil Test COVID-19</h2>
+        <table class="table table-bordered" id="table">
+            <thead>
+                <tr>
+                    <th>No</th>
+                    <th>Nama</th>
+                    <th>Email</th>
+                    <th>Kecamatan</th>
+                    <th>Status</th>
+                    <th>Edit</th>
+                </tr>
+            </thead>
+            <tbody>
+                <?php $no = 1;
+                foreach ($datapasien as $d) { ?>
+                    <tr>
+                        <!--HINT UNTUK MENGHAPUS USER KALIAN DAPAT MENGGUNAKAN FORM, MENGGUNAKAN ANCHOR ATAU HREF PADA BUTTON-->
+                        <form action="">
+                            <td><?php echo $no++ ?></td>
+                            <td><?php echo $d->nama ?></td>
+                            <td><?php echo $d->email ?></td>
+                            <td><?php echo $d->kecamatan ?></td>
+                            <td><?php echo $d->status ?></td>
+                            <td><button type="button" class="btn btn-" data-toggle="modal" data-target="#edit">Validasi Status</button></td>
+                        </form>
+                    </tr>
+                <?php } ?>
+            </tbody>
+        </table>
+    </div>
+</div>
 
-                        <div class="form-group">
-                            <label for="nama">Nama</label>
-                            <input type="text" class="form-control" id="nama" name="nama" value="<?= $tbl_users['nama']; ?>">
-                            <small class="form-text text-danger"><?= form_error('nama') ?>.</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="user_email">Email</label>
-                            <input type="text" class="form-control" id="user_email" name="user_email" value="<?= $tbl_users['user_emails']; ?>">
-                            <small class="form-text text-danger"><?= form_error('email') ?>.</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="text">Kecamatan</label>
-                            <input type="text" class="form-control" id="kecamatan" name="kecamatan" value="<?= $tbl_users['kecamatan']; ?>">
-                            <small class="form-text text-danger"><?= form_error('kecamatan') ?>.</small>
-                        </div>
-                        <div class="form-group">
-                            <label for="text">Status</label>
-                            <input type="text" class="form-control" id="status" name="status" value="<?= $tbl_users['status']; ?>">
-                            <small class="form-text text-danger"><?= form_error('status') ?>.</small>
-                        </div>
+<!-- Modal Input Jadwal -->
+
+<?php $no = 1;
+foreach ($datapasien as $d) { ?>
+    <div class="modal fade" id="edit" tabindex="-1" role="dialog">
+        <div class="modal-dialog" role="document">
+            <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="exampleModalLabel">Input Status</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                        <span aria-hidden="true">&times;</span>
+                    </button>
                 </div>
-                <button type="submit" name="tambah" class="btn btn-primary float-right">Simpan Data</button>
+                <div class="modal-body">
+                    <!-- isi form ini -->
+                    <form method="post" action="<?php echo base_url('validasi_pasien/validasi'); ?>">
+                        <input type="hidden" class="form-control" id="formGroupExampleInput" placeholder="Email" name="email" value="<?php echo $d->email ?>" required>
+                        <div class="form-group">
+                            <label for="formGroupExampleInput">status</label>
+                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="status" name="status" value="<?php echo $d->status ?>" required>
+                        </div>
+                    </form>
+                </div>
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+                    <input type="submit" class="btn btn-primary" id="hapus" value="Submit" placeholder="Simpan"> </div>
                 </form>
             </div>
         </div>
+    </div>
+<?php } ?>
 
-    </div>
-    </div>
-    </div>
+</body>
+<script type="text/javascript">
+    $(document).ready(function() {
+        $('#table').DataTable();
+    });
+</script>
+
+</html>
