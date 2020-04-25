@@ -19,12 +19,12 @@ class Status_pasien extends CI_Controller
 
     function hasil()
     {
-        $email = $this->input->post('email', true);
+        $nama = $this->input->post('nama', true);
         $status = $this->input->post('status', true);
         $data = array(
             'status' => $status
         );
-        $this->user_model->inputStatus($email, $data);
+        $this->user_model->inputStatus($nama, $data);
         $this->session->set_flashdata('flash', 'Disimpan');
         redirect('status_pasien/index');
     }

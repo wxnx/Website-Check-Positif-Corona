@@ -24,8 +24,8 @@
                             <td><?php echo $d->email ?></td>
                             <td><?php echo $d->kecamatan ?></td>
                             <td><?php echo $d->status ?></td>
-                            <td><button type="button" class="btn btn-" data-toggle="modal" data-target="#edit">Validasi Status</button></td>
-                            <td><a type="button" class="btn btn-danger" href="<?php echo base_url('status_pasien/hapus_data' . $d->email); ?>" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-user-times"></i></a></td>
+                            <td><button type="button" class="btn btn-" data-toggle="modal" data-target="#edit<?php echo $d->nama ?>">Validasi Status</button></td>
+                            <td><a type="button" class="btn btn-danger" href="<?php echo base_url('index.php/status_pasien/hapus_data/' . $d->email); ?>" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-user-times"></i></a></td>
                         </form>
                     </tr>
                 <?php } ?>
@@ -38,7 +38,7 @@
 
 <?php $no = 1;
 foreach ($datapasien as $d) { ?>
-    <div class="modal fade" id="edit" tabindex="-1" role="dialog">
+    <div class="modal fade" id="edit<?php echo $d->nama ?>" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">

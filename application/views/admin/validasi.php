@@ -22,8 +22,8 @@
                             <td><?php echo $d->nama ?></td>
                             <td><?php echo $d->email ?></td>
                             <td><?php echo $d->jadwal ?></td>
-                            <td><button type="button" class="btn btn-" data-toggle="modal" data-target="#edit">Validasi</button></td>
-                            <td><a type="button" class="btn btn-danger" href="<?php echo base_url('index.php/validasi_pasien/hapus_data' . $d->email); ?>" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-user-times"></i></a></td>
+                            <td><button type="button" class="btn btn-" data-toggle="modal" data-target="#edit<?php echo $d->nama ?>">Validasi</button></td>
+                            <td><a type="button" class="btn btn-danger" href="<?php echo base_url('index.php/validasi_pasien/hapus_data/' . $d->email); ?>" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-user-times"></i></a></td>
                         </form>
                     </tr>
                 <?php } ?>
@@ -36,7 +36,7 @@
 
 <?php $no = 1;
 foreach ($datapasien as $d) { ?>
-    <div class="modal fade" id="edit" tabindex="-1" role="dialog">
+    <div class="modal fade" id="edit<?php echo $d->nama ?>" tabindex="-1" role="dialog">
         <div class="modal-dialog" role="document">
             <div class="modal-content">
                 <div class="modal-header">
@@ -47,7 +47,7 @@ foreach ($datapasien as $d) { ?>
                 </div>
                 <div class="modal-body">
                     <!-- isi form ini -->
-                    <form method="post" action="<?php echo base_url('index.php/validasi_pasien/validasi'); ?>">
+                    <form method="post" action="<?php echo base_url('validasi_pasien/validasi') ?>">
                         <input type="hidden" class="form-control" id="formGroupExampleInput" placeholder="Email" name="email" value="<?php echo $d->email ?>" required>
                         <div class="form-group">
                             <label for="formGroupExampleInput">Jadwal</label>
@@ -63,12 +63,3 @@ foreach ($datapasien as $d) { ?>
         </div>
     </div>
 <?php } ?>
-
-</body>
-<script type="text/javascript">
-    $(document).ready(function() {
-        $('#table').DataTable();
-    });
-</script>
-
-</html>

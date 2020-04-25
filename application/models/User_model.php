@@ -48,17 +48,17 @@ class User_model extends CI_Model
         $this->db->insert('pasien', $data);
     }
 
-    public function inputJadwal($email, $data)
+    public function inputJadwal($nama, $data)
     {
-        $this->db->where('email', $email);
+        $this->db->where('nama', $nama);
         $this->db->update('pasien', $data);
         $this->db->update('tbl_users', $data);
         return TRUE;
     }
 
-    public function inputStatus($email, $data)
+    public function inputStatus($nama, $data)
     {
-        $this->db->where('email', $email);
+        $this->db->where('nama', $nama);
         $this->db->update('pasien', $data);
         $this->db->update('tbl_users', $data);
         return TRUE;
