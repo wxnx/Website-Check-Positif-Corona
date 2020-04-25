@@ -9,6 +9,7 @@
                     <th>Email</th>
                     <th>Jadwal</th>
                     <th>Edit</th>
+                    <th>Hapus</th>
                 </tr>
             </thead>
             <tbody>
@@ -22,6 +23,7 @@
                             <td><?php echo $d->email ?></td>
                             <td><?php echo $d->jadwal ?></td>
                             <td><button type="button" class="btn btn-" data-toggle="modal" data-target="#edit">Validasi</button></td>
+                            <td><a type="button" class="btn btn-danger" href="<?php echo base_url('index.php/validasi_pasien/hapus_data' . $d->email); ?>" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-user-times"></i></a></td>
                         </form>
                     </tr>
                 <?php } ?>
@@ -45,7 +47,7 @@ foreach ($datapasien as $d) { ?>
                 </div>
                 <div class="modal-body">
                     <!-- isi form ini -->
-                    <form method="post" action="<?php echo base_url('validasi_pasien/validasi'); ?>">
+                    <form method="post" action="<?php echo base_url('index.php/validasi_pasien/validasi'); ?>">
                         <input type="hidden" class="form-control" id="formGroupExampleInput" placeholder="Email" name="email" value="<?php echo $d->email ?>" required>
                         <div class="form-group">
                             <label for="formGroupExampleInput">Jadwal</label>
@@ -55,7 +57,7 @@ foreach ($datapasien as $d) { ?>
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
-                    <input type="submit" class="btn btn-primary" id="hapus" value="Submit" placeholder="Simpan"> </div>
+                    <input type="submit" class="btn btn-primary" value="Submit" placeholder="Simpan"> </div>
                 </form>
             </div>
         </div>

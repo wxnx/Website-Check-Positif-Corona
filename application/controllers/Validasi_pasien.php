@@ -29,4 +29,10 @@ class Validasi_pasien extends CI_Controller
         $this->session->set_flashdata('flash', 'Disetujui');
         redirect('validasi_pasien/index');
     }
+
+    function hapus_data($email)
+    {
+        $this->user_model->del_pasien($email);
+        redirect('validasi_pasien/index');
+    }
 }

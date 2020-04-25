@@ -28,4 +28,10 @@ class Status_pasien extends CI_Controller
         $this->session->set_flashdata('flash', 'Disimpan');
         redirect('status_pasien/index');
     }
+
+    function hapus_data($email)
+    {
+        $this->user_model->del_pasien($email);
+        redirect('status_pasien/index');
+    }
 }

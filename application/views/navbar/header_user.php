@@ -51,7 +51,7 @@
                         </div>
 
                     </li>
-                    <li><a class="nav-item nav-link" href="<?= site_url('login/index') ?>">Keluar</a></li>
+                    <li><a class="nav-item nav-link" href="<?= site_url('login/logout') ?>">Keluar</a></li>
                 </div>
             </div>
         </div>

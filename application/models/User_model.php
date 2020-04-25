@@ -52,6 +52,7 @@ class User_model extends CI_Model
     {
         $this->db->where('email', $email);
         $this->db->update('pasien', $data);
+        $this->db->update('tbl_users', $data);
         return TRUE;
     }
 
@@ -59,9 +60,20 @@ class User_model extends CI_Model
     {
         $this->db->where('email', $email);
         $this->db->update('pasien', $data);
+        $this->db->update('tbl_users', $data);
         return TRUE;
     }
 
+    public function del_pasien($email)
+    {
+        $this->db->delete('pasien', array('email' => $email));
+        return;
+    }
+
+    public function del_datapenyebaran($kecamatan)
+    {
+        $this->db->delete('data_penyebaran', array('kecamatan' => $kecamatan));
+    }
     public function ubahDataPassword()
     {
         $data = [

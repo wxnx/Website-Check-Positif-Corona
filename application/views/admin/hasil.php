@@ -10,6 +10,7 @@
                     <th>Kecamatan</th>
                     <th>Status</th>
                     <th>Edit</th>
+                    <th>Hapus</th>
                 </tr>
             </thead>
             <tbody>
@@ -24,6 +25,7 @@
                             <td><?php echo $d->kecamatan ?></td>
                             <td><?php echo $d->status ?></td>
                             <td><button type="button" class="btn btn-" data-toggle="modal" data-target="#edit">Validasi Status</button></td>
+                            <td><a type="button" class="btn btn-danger" href="<?php echo base_url('status_pasien/hapus_data' . $d->email); ?>" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-user-times"></i></a></td>
                         </form>
                     </tr>
                 <?php } ?>

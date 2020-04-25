@@ -30,4 +30,10 @@ class Data_penyebaran extends CI_Controller
             redirect('data_penyebaran/tambah_data');
         }
     }
+
+    function hapus_data($kecamatan)
+    {
+        $this->user_model->del_datapenyebaran($kecamatan);
+        $this->load->view('admin/persebaran');
+    }
 }
