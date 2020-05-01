@@ -25,8 +25,8 @@ class Login extends CI_Controller
       $email = $data['user_email'];
       $level = $data['user_level'];
       $kecamatan = $data['kecamatan'];
-      $status = $data['status'];
-      $status = $data['jadwal'];
+      $status = $data['status_user'];
+      $jadwal = $data['jadwal'];
       $sesdata = array(
         'id'        => $id,
         'nama'  => $nama,

@@ -24,7 +24,12 @@ class Status_pasien extends CI_Controller
         $data = array(
             'status' => $status
         );
-        $this->user_model->inputStatus($nama, $data);
+        $data1 = array(
+            'status_user' => $status
+        );
+
+        $this->user_model->inputStatusPasien($nama, $data);
+        $this->user_model->inputStatusUser($nama, $data1);
         $this->session->set_flashdata('flash', 'Disimpan');
         redirect('status_pasien/index');
     }

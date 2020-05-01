@@ -22,7 +22,7 @@
                             <td><?php echo $d->nama ?></td>
                             <td><?php echo $d->email ?></td>
                             <td><?php echo $d->jadwal ?></td>
-                            <td><button type="button" class="btn btn-" data-toggle="modal" data-target="#edit<?php echo $d->nama ?>">Validasi</button></td>
+                            <td><button type="button" class="btn btn-" data-toggle="modal" data-target="#edit<? echo $d->nama ?>">Validasi</button></td>
                             <td><a type="button" class="btn btn-danger" href="<?php echo base_url('index.php/validasi_pasien/hapus_data/' . $d->email); ?>" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-user-times"></i></a></td>
                         </form>
                     </tr>
@@ -36,30 +36,31 @@
 
 <?php $no = 1;
 foreach ($datapasien as $d) { ?>
-    <div class="modal fade" id="edit<?php echo $d->nama ?>" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Input Jadwal</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <!-- isi form ini -->
-                    <form method="post" action="<?php echo base_url('validasi_pasien/validasi') ?>">
-                        <input type="hidden" class="form-control" id="formGroupExampleInput" placeholder="Email" name="email" value="<?php echo $d->email ?>" required>
+    <div class="modal fade" id="edit<? echo $d->nama ?>">
+        <div class="modal-dialog">
+            <form method="post" action="<?php echo site_url('validasi_pasien/validasi') ?>">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Input Jadwal</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- isi form ini -->
+
+                        <input type="hidden" class="form-control" id="formGroupExampleInput" placeholder="nama" name="nama" value="<? echo $d->nama ?>" required>
                         <div class="form-group">
                             <label for="formGroupExampleInput">Jadwal</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="jadwal" name="jadwal" value="<?php echo $d->jadwal ?>" required>
+                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="jadwal" name="jadwal" value="<? echo $d->jadwal ?>" required>
                         </div>
-                    </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+                        <input type="submit" class="btn btn-primary" value="Submit"></div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
-                    <input type="submit" class="btn btn-primary" value="Submit" placeholder="Simpan"> </div>
-                </form>
-            </div>
+            </form>
         </div>
     </div>
 <?php } ?>

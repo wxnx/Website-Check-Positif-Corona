@@ -38,30 +38,31 @@
 
 <?php $no = 1;
 foreach ($datapasien as $d) { ?>
-    <div class="modal fade" id="edit<?php echo $d->nama ?>" tabindex="-1" role="dialog">
-        <div class="modal-dialog" role="document">
-            <div class="modal-content">
-                <div class="modal-header">
-                    <h5 class="modal-title" id="exampleModalLabel">Input Status</h5>
-                    <button type="button" class="close" data-dismiss="modal" aria-label="Close">
-                        <span aria-hidden="true">&times;</span>
-                    </button>
-                </div>
-                <div class="modal-body">
-                    <!-- isi form ini -->
-                    <form method="post" action="<?php echo base_url('validasi_pasien/validasi'); ?>">
-                        <input type="hidden" class="form-control" id="formGroupExampleInput" placeholder="Email" name="email" value="<?php echo $d->email ?>" required>
+    <div class="modal fade" id="edit<?php echo $d->nama ?>">
+        <div class="modal-dialog">
+            <form method="post" action="<?php echo site_url('status_pasien/hasil'); ?>">
+                <div class="modal-content">
+                    <div class="modal-header">
+                        <h5 class="modal-title" id="exampleModalLabel">Input Status</h5>
+                        <button type="button" class="close" data-dismiss="modal" aria-label="Close">
+                            <span aria-hidden="true">&times;</span>
+                        </button>
+                    </div>
+                    <div class="modal-body">
+                        <!-- isi form ini -->
+
+                        <input type="hidden" class="form-control" id="formGroupExampleInput" placeholder="nama" name="nama" value="<?php echo $d->nama ?>" required>
                         <div class="form-group">
                             <label for="formGroupExampleInput">status</label>
                             <input type="text" class="form-control" id="formGroupExampleInput" placeholder="status" name="status" value="<?php echo $d->status ?>" required>
                         </div>
-                    </form>
+
+                    </div>
+                    <div class="modal-footer">
+                        <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
+                        <input type="submit" class="btn btn-primary" value="Submit" placeholder="Simpan"> </div>
                 </div>
-                <div class="modal-footer">
-                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
-                    <input type="submit" class="btn btn-primary" id="hapus" value="Submit" placeholder="Simpan"> </div>
-                </form>
-            </div>
+            </form>
         </div>
     </div>
 <?php } ?>

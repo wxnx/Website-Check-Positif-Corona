@@ -2,13 +2,6 @@
 
 class User_model extends CI_Model
 {
-    public function hapusPassword($id)
-    {
-        //use query builder to delete data based on id 
-        $this->db->where('user_id', $id);
-        $this->db->delete('user_password');
-    }
-
     public function viewDataUser($email)
     {
         //get data mahasiswa based on id 
@@ -48,18 +41,30 @@ class User_model extends CI_Model
         $this->db->insert('pasien', $data);
     }
 
-    public function inputJadwal($nama, $data)
+    public function inputJadwalPasien($nama, $data)
     {
         $this->db->where('nama', $nama);
         $this->db->update('pasien', $data);
+        return TRUE;
+    }
+
+    public function inputJadwalUser($nama, $data)
+    {
+        $this->db->where('nama', $nama);
         $this->db->update('tbl_users', $data);
         return TRUE;
     }
 
-    public function inputStatus($nama, $data)
+    public function inputStatusPasien($nama, $data)
     {
         $this->db->where('nama', $nama);
         $this->db->update('pasien', $data);
+        return TRUE;
+    }
+
+    public function inputStatusUser($nama, $data)
+    {
+        $this->db->where('nama', $nama);
         $this->db->update('tbl_users', $data);
         return TRUE;
     }
@@ -73,34 +78,5 @@ class User_model extends CI_Model
     public function del_datapenyebaran($kecamatan)
     {
         $this->db->delete('data_penyebaran', array('kecamatan' => $kecamatan));
-    }
-    public function ubahDataPassword()
-    {
-        $data = [
-            "password" => $this->input->post('user_password', true)
-        ];
-        //use query builder class to update data mahasiswa based on id
-        $this->db->where('id', $this->input->post('id'));
-        $this->db->update('tbl_users', $data);
-    }
-
-    public function ubahDataStatus()
-    {
-        $data = [
-            "status" => $this->input->post('status_user', true)
-        ];
-        //use query builder class to update data mahasiswa based on id
-        $this->db->where('id', $this->input->post('id'));
-        $this->db->update('tbl_users', $data);
-    }
-
-    public function ubahDataAlamat()
-    {
-        $data = [
-            "alamat" => $this->input->post('alamat', true)
-        ];
-        //use query builder class to update data mahasiswa based on id
-        $this->db->where('id', $this->input->post('id'));
-        $this->db->update('tbl_users', $data);
     }
 }
