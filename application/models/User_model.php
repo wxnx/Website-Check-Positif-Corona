@@ -79,4 +79,16 @@ class User_model extends CI_Model
     {
         $this->db->delete('data_penyebaran', array('kecamatan' => $kecamatan));
     }
+	 public function gantiPass($id, $data)
+    {
+        $this->db->where('user_id', $id);
+        $this->db->update('tbl_users', $data);
+        return TRUE;
+    }
+	 public function gantiKecamatan($id, $data)
+    {
+        $this->db->where('user_id', $id);
+        $this->db->update('tbl_users', $data);
+        return TRUE;
+    }
 }
