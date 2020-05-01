@@ -6,7 +6,7 @@
                     Ubah Kecamatan
                 </div>
                 <div class="card-body">
-                    <form action="" method="post">
+                    <form action="<?php echo site_url('ubah_kecamatan/hasil') ?>" method="post">
                         <div class="form-group">
                             <label for="kecamatan">Kecamatan</label>
                             <input type="text" class="form-control" id="kecamatan" name="kecamatan">
