@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 24, 2020 at 06:40 PM
+-- Generation Time: May 01, 2020 at 11:32 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.4
 
@@ -35,7 +35,7 @@ CREATE TABLE `tbl_users` (
   `kecamatan` varchar(50) NOT NULL,
   `user_level` varchar(3) DEFAULT NULL,
   `status_user` varchar(25) DEFAULT NULL,
-  `jadwal` varchar(50) DEFAULT NULL
+  `jadwal` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
@@ -43,13 +43,8 @@ CREATE TABLE `tbl_users` (
 --
 
 INSERT INTO `tbl_users` (`user_id`, `nama`, `user_email`, `user_password`, `kecamatan`, `user_level`, `status_user`, `jadwal`) VALUES
-(4, 'testes', 'testes@gmail.com', 'tes', 'Pondok Labu', '1', NULL, NULL),
-(6, 'farhan', 'farhan.muhammad@rocketmail.com', '123', 'Cilandak', '2', NULL, NULL),
-(7, 'jojo', 'jotaro@gmail.com', '123', 'morioh', '2', NULL, NULL),
-(8, 'beadobe', 'bdb@gmail.com', '123', 'Cicaheum', '2', NULL, NULL),
-(9, 'fur', 'fur@gmail.com', '123', 'London', '2', NULL, NULL),
-(10, 'style', 'style@gmail.com', '123', 'NYC', '2', NULL, NULL),
-(11, 'beta', 'beta@gmail.com', '123', 'Papua', '2', NULL, NULL);
+(1, '', 'admin@gmail.com', 'admin', '', '1', NULL, NULL),
+(12, 'fur', 'fur@gmail.com', '123', 'Bojongsoang', '2', 'Negatif (-)', '2020-05-21');
 
 --
 -- Indexes for dumped tables
@@ -69,7 +64,7 @@ ALTER TABLE `tbl_users`
 -- AUTO_INCREMENT for table `tbl_users`
 --
 ALTER TABLE `tbl_users`
-  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=12;
+  MODIFY `user_id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=13;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

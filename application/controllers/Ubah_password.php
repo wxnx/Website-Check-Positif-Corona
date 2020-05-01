@@ -26,6 +26,6 @@ class Ubah_Password extends CI_Controller
 
         $this->user_model->gantiPass($id, $data);
         $this->session->set_flashdata('flash', 'Disimpan');
-        redirect('Ubah_Password/index');
+        redirect('Ubah_password/index');
     }
 }

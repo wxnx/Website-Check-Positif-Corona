@@ -52,7 +52,7 @@ foreach ($datapasien as $d) { ?>
                         <input type="hidden" class="form-control" id="formGroupExampleInput" placeholder="nama" name="nama" value="<? echo $d->nama ?>" required>
                         <div class="form-group">
                             <label for="formGroupExampleInput">Jadwal</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="jadwal" name="jadwal" value="<? echo $d->jadwal ?>" required>
+                            <input type="date" class="form-control" id="formGroupExampleInput" placeholder="jadwal" name="jadwal" value="<? echo $d->jadwal ?>" required>
                         </div>
 
                     </div>

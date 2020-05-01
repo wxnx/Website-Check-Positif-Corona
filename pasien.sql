@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 25, 2020 at 11:06 AM
+-- Generation Time: May 01, 2020 at 11:32 PM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.4
 
@@ -32,7 +32,7 @@ CREATE TABLE `pasien` (
   `email` varchar(60) NOT NULL,
   `kecamatan` varchar(50) NOT NULL,
   `status` varchar(25) DEFAULT NULL,
-  `jadwal` varchar(50) DEFAULT NULL
+  `jadwal` date DEFAULT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 --
@@ -40,7 +40,7 @@ CREATE TABLE `pasien` (
 --
 
 INSERT INTO `pasien` (`nama`, `email`, `kecamatan`, `status`, `jadwal`) VALUES
-('fur', 'fur@gmail.com', 'London', NULL, NULL);
+('fur', 'fur@gmail.com', 'Bojongsoang', 'Negatif (-)', '2020-05-21');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
