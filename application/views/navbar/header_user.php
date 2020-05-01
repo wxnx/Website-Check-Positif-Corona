@@ -44,8 +44,8 @@
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <a class="dropdown-item" href="#">Hai,<?php echo $this->session->userdata('nama'); ?></a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="#">Ubah Kecamatan</a>
-                                <a class="dropdown-item" href="#">Ubah Password</a>
+                                <a class="dropdown-item" href="<?= site_url('pengaturan/kecamatan') ?>">Ubah Kecamatan</a>
+                                <a class="dropdown-item" href="<?= site_url('pengaturan/password') ?>">Ubah Password</a>
                             </div>
 
                         </div>

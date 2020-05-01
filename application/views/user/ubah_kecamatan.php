@@ -3,7 +3,7 @@
         <div class="col">
             <div class="card">
                 <div class="card-header text-center">
-                    Form Input Data Persebaran COVID-19
+                    Ubah Kecamatan
                 </div>
                 <div class="card-body">
                     <form action="" method="post">
@@ -12,12 +12,7 @@
                             <input type="text" class="form-control" id="kecamatan" name="kecamatan">
                             <small class="form-text text-danger"><?= form_error('kecamatan') ?>.</small>
                         </div>
-                        <div class="form-group">
-                            <label for="jumlah">Jumlah</label>
-                            <input type="text" class="form-control" id="jumlah" name="jumlah">
-                            <small class="form-text text-danger"><?= form_error('jumlah') ?>.</small>
-                        </div>
-                        <button type="submit" class="btn btn-primary float-right">Tambah Data</button>
+                        <button type="submit" class="btn btn-primary float-right">Ubah</button>
                     </form>
                 </div>
             </div>
