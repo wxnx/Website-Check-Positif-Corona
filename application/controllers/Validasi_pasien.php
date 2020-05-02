@@ -19,20 +19,20 @@ class Validasi_pasien extends CI_Controller
 
     function validasi()
     {
-        $nama = $this->input->post('nama', true);
+        $id = $this->input->post('id', true);
         $jadwal = $this->input->post('jadwal', true);
         $data = array(
             'jadwal' => $jadwal
         );
-        $this->user_model->inputJadwalPasien($nama, $data);
-        $this->user_model->inputJadwalUser($nama, $data);
+        $this->user_model->inputJadwalPasien($id, $data);
+        $this->user_model->inputJadwalUser($id, $data);
         $this->session->set_flashdata('flash', 'Disetujui');
         redirect('validasi_pasien/index');
     }
 
-    function hapus_data($email)
+    function hapus_data($id)
     {
-        $this->user_model->del_pasien($email);
+        $this->user_model->del_pasien($id);
         redirect('validasi_pasien/index');
     }
 }

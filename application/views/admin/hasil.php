@@ -24,8 +24,8 @@
                             <td><?php echo $d->email ?></td>
                             <td><?php echo $d->kecamatan ?></td>
                             <td><?php echo $d->status ?></td>
-                            <td><button type="button" class="btn btn-" data-toggle="modal" data-target="#edit<?php echo $d->nama ?>">Validasi Status</button></td>
-                            <td><a type="button" class="btn btn-danger" href="<?php echo base_url('index.php/status_pasien/hapus_data/' . $d->email); ?>" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-user-times"></i></a></td>
+                            <td><button type="button" class="btn btn-" data-toggle="modal" data-target="#edit<?php echo $d->id ?>">Validasi Status</button></td>
+                            <td><a type="button" class="btn btn-danger" href="<?php echo base_url('index.php/status_pasien/hapus_data/' . $d->id); ?>" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-user-times"></i></a></td>
                         </form>
                     </tr>
                 <?php } ?>
@@ -38,7 +38,7 @@
 
 <?php $no = 1;
 foreach ($datapasien as $d) { ?>
-    <div class="modal fade" id="edit<?php echo $d->nama ?>">
+    <div class="modal fade" id="edit<?php echo $d->id ?>">
         <div class="modal-dialog">
             <form method="post" action="<?php echo site_url('status_pasien/hasil'); ?>">
                 <div class="modal-content">
@@ -51,7 +51,7 @@ foreach ($datapasien as $d) { ?>
                     <div class="modal-body">
                         <!-- isi form ini -->
 
-                        <input type="hidden" class="form-control" id="formGroupExampleInput" placeholder="nama" name="nama" value="<?php echo $d->nama ?>" required>
+                        <input type="hidden" class="form-control" id="formGroupExampleInput" placeholder="id" name="id" value="<?php echo $d->id ?>" required>
                         <div class="form-group">
                             <label for="formGroupExampleInput">Status</label>
                             <select class="form-control" id="formGroupExampleInput" name="status" value="<?php echo $d->status ?>" required>

@@ -25,9 +25,9 @@
                             <td><?php echo $d->jumlah ?></td>
 
                             <!--BUTTON EDIT -->
-                            <td><button type="button" class="btn btn-" data-toggle="modal" data-target="#edit<? echo $d->kecamatan ?>">Edit</button></td>
+                            <td><button type="button" class="btn btn-" data-toggle="modal" data-target="#edit<? echo $d->id ?>">Edit</button></td>
                             <!--BUTTON HAPUS --- ISI LENGKAPI BUTTON INI -->
-                            <td><a type="button" class="btn btn-danger" href="<?php echo base_url('index.php/data_penyebaran/hapus/' . $d->kecamatan); ?>" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-user-times"></i></a></td>
+                            <td><a type="button" class="btn btn-danger" href="<?php echo base_url('index.php/data_penyebaran/hapus/' . $d->id); ?>" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-user-times"></i></a></td>
                         </form>
                     </tr>
                 <?php } ?>
@@ -40,7 +40,7 @@
 
 <?php $no = 1;
 foreach ($datapenyebaran as $d) { ?>
-    <div class="modal fade" id="edit<? echo $d->kecamatan ?>">
+    <div class="modal fade" id="edit<? echo $d->id ?>">
         <div class="modal-dialog">
             <form method="post" action="<?php echo site_url('data_penyebaran/edit') ?>">
                 <div class="modal-content">
@@ -53,7 +53,7 @@ foreach ($datapenyebaran as $d) { ?>
                     <div class="modal-body">
                         <!-- isi form ini -->
 
-                        <input type="hidden" class="form-control" id="formGroupExampleInput" placeholder="kecamatan" name="kecamatan" value="<? echo $d->kecamatan ?>" required>
+                        <input type="hidden" class="form-control" id="formGroupExampleInput" placeholder="id" name="id" value="<? echo $d->id ?>" required>
                         <div class="form-group">
                             <label for="formGroupExampleInput">Jumlah</label>
                             <input type="text" class="form-control" id="formGroupExampleInput" placeholder="jumlah" name="jumlah" value="<? echo $d->jumlah ?>" required>

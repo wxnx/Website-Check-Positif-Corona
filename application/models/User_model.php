@@ -20,21 +20,26 @@ class User_model extends CI_Model
         return $this->db->get('data_penyebaran')->result();
     }
 
+    public function viewDataPenyebaranOnUser()
+    {
+        return $this->db->get('data_penyebaran')->result_array();
+    }
+
     public function addDataPenyebaran($data)
     {
         $this->db->insert('data_penyebaran', $data);
     }
 
-    public function editDataPenyebaran($kecamatan, $data)
+    public function editDataPenyebaran($id, $data)
     {
-        $this->db->where('kecamatan', $kecamatan);
+        $this->db->where('id', $id);
         $this->db->update('data_penyebaran', $data);
         return TRUE;
     }
 
-    public function hapusDataPenyebaran($kecamatan)
+    public function hapusDataPenyebaran($id)
     {
-        $this->db->delete('data_penyebaran', array('kecamatan' => $kecamatan));
+        $this->db->delete('data_penyebaran', array('id' => $id));
         return;
     }
 
@@ -46,41 +51,42 @@ class User_model extends CI_Model
             "kecamatan" => $this->session->userdata('kecamatan'),
             "status" => $this->session->userdata('status'),
             "jadwal" => $this->session->userdata('jadwal'),
+            "id" => $this->session->userdata('id'),
         ];
         $this->db->insert('pasien', $data);
     }
 
-    public function inputJadwalPasien($nama, $data)
+    public function inputJadwalPasien($id, $data)
     {
-        $this->db->where('nama', $nama);
+        $this->db->where('id', $id);
         $this->db->update('pasien', $data);
         return TRUE;
     }
 
-    public function inputJadwalUser($nama, $data)
+    public function inputJadwalUser($id, $data)
     {
-        $this->db->where('nama', $nama);
+        $this->db->where('user_id', $id);
         $this->db->update('tbl_users', $data);
         return TRUE;
     }
 
-    public function inputStatusPasien($nama, $data)
+    public function inputStatusPasien($id, $data)
     {
-        $this->db->where('nama', $nama);
+        $this->db->where('id', $id);
         $this->db->update('pasien', $data);
         return TRUE;
     }
 
-    public function inputStatusUser($nama, $data)
+    public function inputStatusUser($id, $data)
     {
-        $this->db->where('nama', $nama);
+        $this->db->where('user_id', $id);
         $this->db->update('tbl_users', $data);
         return TRUE;
     }
 
-    public function del_pasien($email)
+    public function del_pasien($id)
     {
-        $this->db->delete('pasien', array('email' => $email));
+        $this->db->delete('pasien', array('id' => $id));
         return;
     }
 

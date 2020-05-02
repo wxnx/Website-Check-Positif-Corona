@@ -19,7 +19,7 @@ class Status_pasien extends CI_Controller
 
     function hasil()
     {
-        $nama = $this->input->post('nama', true);
+        $id = $this->input->post('id', true);
         $status = $this->input->post('status', true);
         $data = array(
             'status' => $status
@@ -28,15 +28,15 @@ class Status_pasien extends CI_Controller
             'status_user' => $status
         );
 
-        $this->user_model->inputStatusPasien($nama, $data);
-        $this->user_model->inputStatusUser($nama, $data1);
+        $this->user_model->inputStatusPasien($id, $data);
+        $this->user_model->inputStatusUser($id, $data1);
         $this->session->set_flashdata('flash', 'Disimpan');
         redirect('status_pasien/index');
     }
 
-    function hapus_data($email)
+    function hapus_data($id)
     {
-        $this->user_model->del_pasien($email);
+        $this->user_model->del_pasien($id);
         redirect('status_pasien/index');
     }
 }
