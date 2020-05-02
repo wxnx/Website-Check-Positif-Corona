@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: May 01, 2020 at 11:32 PM
+-- Generation Time: May 02, 2020 at 07:56 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.4
 
@@ -40,7 +40,7 @@ CREATE TABLE `pasien` (
 --
 
 INSERT INTO `pasien` (`nama`, `email`, `kecamatan`, `status`, `jadwal`) VALUES
-('fur', 'fur@gmail.com', 'Bojongsoang', 'Negatif (-)', '2020-05-21');
+('Robin', 'robin@gmail.com', 'Kiaracondong', 'Positif (+)', '2020-05-21');
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

@@ -3,7 +3,7 @@
 -- https://www.phpmyadmin.net/
 --
 -- Host: localhost
--- Generation Time: Apr 24, 2020 at 05:07 PM
+-- Generation Time: May 02, 2020 at 07:54 AM
 -- Server version: 10.4.11-MariaDB
 -- PHP Version: 7.4.4
 
@@ -37,8 +37,7 @@ CREATE TABLE `data_penyebaran` (
 --
 
 INSERT INTO `data_penyebaran` (`kecamatan`, `jumlah`) VALUES
-('Cicaheum', 5),
-('Baleendah', 3);
+('Kiaracondong', 1);
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;
