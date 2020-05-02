@@ -17,16 +17,25 @@ class User_model extends CI_Model
 
     public function viewDataPenyebaran()
     {
-        return $this->db->get('data_penyebaran')->result_array();
+        return $this->db->get('data_penyebaran')->result();
     }
 
-    public function addDataPenyebaran()
+    public function addDataPenyebaran($data)
     {
-        $data = [
-            "kecamatan" => $this->input->post('kecamatan', true),
-            "jumlah" => $this->input->post('jumlah', true),
-        ];
         $this->db->insert('data_penyebaran', $data);
+    }
+
+    public function editDataPenyebaran($kecamatan, $data)
+    {
+        $this->db->where('kecamatan', $kecamatan);
+        $this->db->update('data_penyebaran', $data);
+        return TRUE;
+    }
+
+    public function hapusDataPenyebaran($kecamatan)
+    {
+        $this->db->delete('data_penyebaran', array('kecamatan' => $kecamatan));
+        return;
     }
 
     public function sendData()
@@ -75,17 +84,13 @@ class User_model extends CI_Model
         return;
     }
 
-    public function del_datapenyebaran($kecamatan)
-    {
-        $this->db->delete('data_penyebaran', array('kecamatan' => $kecamatan));
-    }
-	 public function gantiPass($id, $data)
+    public function gantiPass($id, $data)
     {
         $this->db->where('user_id', $id);
         $this->db->update('tbl_users', $data);
         return TRUE;
     }
-	 public function gantiKecamatan($id, $data)
+    public function gantiKecamatan($id, $data)
     {
         $this->db->where('user_id', $id);
         $this->db->update('tbl_users', $data);

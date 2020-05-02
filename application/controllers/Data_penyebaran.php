@@ -15,19 +15,41 @@ class Data_penyebaran extends CI_Controller
         $this->load->view('user/persebaran', $datapersebaran);
     }
 
-    function tambah_data()
+    function adminIndex()
     {
-        $data['judul'] = 'Input Data Penyebaran COVID-19';
-        $this->form_validation->set_rules('kecamatan', 'kecamatan', 'required');
-        $this->form_validation->set_rules('jumlah', 'jumlah', 'required|numeric');
+        $data['judul'] = 'Form Input Data Penyebaran COVID-19';
+        $datapersebaran['datapenyebaran'] = $this->user_model->viewDataPenyebaran();
+        $this->load->view('navbar/header_admin', $data);
+        $this->load->view('admin/persebaran', $datapersebaran);
+    }
 
-        if ($this->form_validation->run() == false) {
-            $this->load->view('navbar/header_admin', $data);
-            $this->load->view('admin/persebaran');
-        } else {
-            $this->user_model->addDataPenyebaran();
-            $this->session->set_flashdata('flash', 'Ditambahkan');
-            redirect('data_penyebaran/tambah_data');
-        }
+    function hapus($kecamatan)
+    {
+        $this->user_model->hapusDataPenyebaran($kecamatan);
+        redirect('data_penyebaran/adminIndex');
+    }
+
+    function tambah()
+    {
+        $kecamatan = $this->input->post('kecamatan');
+        $jumlah = $this->input->post('jumlah');;
+        $data = array(
+            'kecamatan' => $kecamatan,
+            'jumlah' => $jumlah,
+        );
+        $this->user_model->addDataPenyebaran($data);
+
+        redirect('data_penyebaran/adminIndex');
+    }
+
+    public function edit()
+    {
+        $kecamatan = $this->input->post('kecamatan');
+        $jumlah = $this->input->post('jumlah');;
+        $data = array(
+            'jumlah' => $jumlah,
+        );
+        $this->user_model->editDataPenyebaran($kecamatan, $data);
+        redirect('data_penyebaran/adminIndex');
     }
 }

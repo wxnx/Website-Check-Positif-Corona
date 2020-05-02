@@ -32,7 +32,7 @@
                     <li><a class="nav-item nav-link" href="<?= site_url('page/index') ?>">Beranda</a></li>
                     <li><a class="nav-item nav-link" href="<?= site_url('validasi_pasien/index') ?>">Validasi Pasien</a></li>
                     <li><a class=" nav-item nav-link" href="<?= site_url('status_pasien/index') ?>">Input Hasil Test Pasien</a></li>
-                    <li><a class="nav-item nav-link" href="<?= site_url('data_penyebaran/tambah_data') ?>">Input Data Persebaran Corona</a></li>
+                    <li><a class="nav-item nav-link" href="<?= site_url('data_penyebaran/adminIndex') ?>">Input Data Persebaran Corona</a></li>
                 </div>
                 <div class="navbar-nav">
                     <li><a class="nav-item nav-link" href="<?= site_url('login/logout') ?>">Keluar</a></li>
