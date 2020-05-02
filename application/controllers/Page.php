@@ -36,25 +36,5 @@ class Page extends CI_Controller
     {
       $this->load->view('register/index');
     }
-
-    function hasil_test()
-    {
-      $this->load->view('login/hasil_test');
-    }
-
-    function jadwal_test()
-    {
-      $this->load->view('login/jadwal_test');
-    }
-
-    function persebaran()
-    {
-      $this->load->view('Data_penyebaran/index');
-    }
-
-    function daftar()
-    {
-      $this->load->view('login/daftar');
-    }
   }
 }

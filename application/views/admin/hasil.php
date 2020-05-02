@@ -53,8 +53,11 @@ foreach ($datapasien as $d) { ?>
 
                         <input type="hidden" class="form-control" id="formGroupExampleInput" placeholder="nama" name="nama" value="<?php echo $d->nama ?>" required>
                         <div class="form-group">
-                            <label for="formGroupExampleInput">status</label>
-                            <input type="text" class="form-control" id="formGroupExampleInput" placeholder="status" name="status" value="<?php echo $d->status ?>" required>
+                            <label for="formGroupExampleInput">Status</label>
+                            <select class="form-control" id="formGroupExampleInput" name="status" value="<?php echo $d->status ?>" required>
+                                <option value="Positif (+)">Positif (+)</option>
+                                <option value="Negatif (-)">Negatif (-)</option>
+                            </select>
                         </div>
 
                     </div>
