@@ -19,7 +19,7 @@ class Data_penyebaran extends CI_Controller
     function hapus($id)
     {
         $this->admin_model->hapusDataPenyebaran($id);
-        redirect('data_penyebaran/adminIndex');
+        redirect('data_penyebaran/index');
     }
 
     function tambah()
@@ -31,7 +31,7 @@ class Data_penyebaran extends CI_Controller
             'jumlah' => $jumlah,
         );
         $this->admin_model->addDataPenyebaran($data);
-        redirect('data_penyebaran/adminIndex');
+        redirect('data_penyebaran/index');
     }
 
     public function edit()
@@ -42,6 +42,6 @@ class Data_penyebaran extends CI_Controller
             'jumlah' => $jumlah,
         );
         $this->admin_model->editDataPenyebaran($id, $data);
-        redirect('data_penyebaran/adminIndex');
+        redirect('data_penyebaran/index');
     }
 }
