@@ -37,4 +37,11 @@ class Page extends CI_Controller
       $this->load->view('register/index');
     }
   }
+
+  function tentang()
+  {
+    $data['judul'] = 'Tentang';
+    $this->load->view('navbar/header_admin', $data);
+    $this->load->view('about');
+  }
 }

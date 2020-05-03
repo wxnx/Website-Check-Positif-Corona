@@ -29,12 +29,13 @@
             </button>
             <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
                 <div class="navbar-nav mr-auto mt-2 mt-lg-0">
-                    <a class="nav-item nav-link" href="<?= site_url('page/user') ?>">Beranda</a></li>
-                    <a class="nav-item nav-link" href="<?= site_url('login/jadwal_test') ?>">Jadwal Test</a></li>
-                    <a class="nav-item nav-link" href="<?= site_url('login/hasil_test') ?>">Hasil Test</a></li>
-                    <a class="nav-item nav-link" href="<?= site_url('login/persebaran') ?>">Data Persebaran Corona</a></li>
+                    <li><a class="nav-item nav-link" href="<?= site_url('page/user') ?>">Beranda</a></li>
+                    <li><a class="nav-item nav-link" href="<?= site_url('login/jadwal_test') ?>">Jadwal Test</a></li>
+                    <li><a class="nav-item nav-link" href="<?= site_url('login/hasil_test') ?>">Hasil Test</a></li>
+                    <li><a class="nav-item nav-link" href="<?= site_url('login/persebaran') ?>">Data Persebaran Corona</a></li>
                 </div>
                 <div class="navbar-nav">
+                    <li><a class="nav-item nav-link" href="<?= site_url('login/tentang') ?>">Tentang</a></li>
                     <li>
                         <div class="dropdown">
                             <a class="nav-item nav-link" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">

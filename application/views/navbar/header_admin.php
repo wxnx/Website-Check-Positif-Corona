@@ -35,6 +35,7 @@
                     <li><a class="nav-item nav-link" href="<?= site_url('data_penyebaran/index') ?>">Input Data Persebaran Corona</a></li>
                 </div>
                 <div class="navbar-nav">
+                    <li><a class="nav-item nav-link" href="<?= site_url('page/tentang') ?>">Tentang</a></li>
                     <li><a class="nav-item nav-link" href="<?= site_url('login/logout') ?>">Keluar</a></li>
                 </div>
             </div>

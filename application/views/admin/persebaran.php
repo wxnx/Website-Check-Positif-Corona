@@ -18,15 +18,13 @@
                 <?php $no = 1;
                 foreach ($datapenyebaran as $d) { ?>
                     <tr>
-                        <!--HINT UNTUK MENGHAPUS USER KALIAN DAPAT MENGGUNAKAN FORM, MENGGUNAKAN ANCHOR ATAU HREF PADA BUTTON-->
                         <form action="">
                             <td><?php echo $no++ ?></td>
                             <td><?php echo $d->kecamatan ?></td>
                             <td><?php echo $d->jumlah ?></td>
 
-                            <!--BUTTON EDIT -->
                             <td><button type="button" class="btn btn-" data-toggle="modal" data-target="#edit<? echo $d->id ?>">Edit</button></td>
-                            <!--BUTTON HAPUS --- ISI LENGKAPI BUTTON INI -->
+
                             <td><a type="button" class="btn btn-danger" href="<?php echo base_url('index.php/data_penyebaran/hapus/' . $d->id); ?>" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-user-times"></i></a></td>
                         </form>
                     </tr>
@@ -35,8 +33,6 @@
         </table>
     </div>
 </div>
-
-<!-- Modal Edit -->
 
 <?php $no = 1;
 foreach ($datapenyebaran as $d) { ?>
@@ -51,25 +47,22 @@ foreach ($datapenyebaran as $d) { ?>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <!-- isi form ini -->
-
                         <input type="hidden" class="form-control" id="formGroupExampleInput" placeholder="id" name="id" value="<? echo $d->id ?>" required>
                         <div class="form-group">
                             <label for="formGroupExampleInput">Jumlah</label>
                             <input type="text" class="form-control" id="formGroupExampleInput" placeholder="jumlah" name="jumlah" value="<? echo $d->jumlah ?>" required>
                         </div>
-
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
-                        <input type="submit" class="btn btn-primary" value="Submit"></div>
+                        <input type="submit" class="btn btn-primary" value="Submit">
+                    </div>
                 </div>
             </form>
         </div>
     </div>
 <?php } ?>
 
-<!-- Modal Tambah -->
 <div class="modal fade" id="edit1">
     <div class="modal-dialog">
         <form method="POST" action="<?php echo site_url('data_penyebaran/tambah/'); ?>">
@@ -80,8 +73,6 @@ foreach ($datapenyebaran as $d) { ?>
                     </center>
                 </div>
                 <div class="modal-body">
-                    <!-- isi form ini -->
-
                     <div class="form-group">
                         <label for="kecamatan">Kecamatan</label>
                         <select class="form-control" id="kecamatan" name="kecamatan">
@@ -126,12 +117,12 @@ foreach ($datapenyebaran as $d) { ?>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Batal</button>
                         <input type="submit" class="btn btn-primary" id="hapus" value="Submit" placeholder="Simpan">
+                    </div>
+                </div>
+            </div>
         </form>
     </div>
 </div>
-</div>
-</div>
-
 
 </body>
 <script type="text/javascript">

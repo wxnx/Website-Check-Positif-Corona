@@ -17,7 +17,6 @@
                 <?php $no = 1;
                 foreach ($datapasien as $d) { ?>
                     <tr>
-                        <!--HINT UNTUK MENGHAPUS USER KALIAN DAPAT MENGGUNAKAN FORM, MENGGUNAKAN ANCHOR ATAU HREF PADA BUTTON-->
                         <form action="">
                             <td><?php echo $no++ ?></td>
                             <td><?php echo $d->nama ?></td>
@@ -34,8 +33,6 @@
     </div>
 </div>
 
-<!-- Modal Input Jadwal -->
-
 <?php $no = 1;
 foreach ($datapasien as $d) { ?>
     <div class="modal fade" id="edit<?php echo $d->id ?>">
@@ -49,8 +46,6 @@ foreach ($datapasien as $d) { ?>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <!-- isi form ini -->
-
                         <input type="hidden" class="form-control" id="formGroupExampleInput" placeholder="id" name="id" value="<?php echo $d->id ?>" required>
                         <div class="form-group">
                             <label for="formGroupExampleInput">Status</label>
@@ -59,11 +54,11 @@ foreach ($datapasien as $d) { ?>
                                 <option value="Negatif (-)">Negatif (-)</option>
                             </select>
                         </div>
-
                     </div>
                     <div class="modal-footer">
                         <button type="button" class="btn btn-secondary" data-dismiss="modal">Tidak</button>
-                        <input type="submit" class="btn btn-primary" value="Submit" placeholder="Simpan"> </div>
+                        <input type="submit" class="btn btn-primary" value="Submit" placeholder="Simpan">
+                    </div>
                 </div>
             </form>
         </div>

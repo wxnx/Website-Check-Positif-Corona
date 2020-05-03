@@ -83,6 +83,13 @@ class Login extends CI_Controller
     $this->load->view('user/persebaran', $datapersebaran);
   }
 
+  function tentang()
+  {
+    $data['judul'] = 'Tentang';
+    $this->load->view('navbar/header_user', $data);
+    $this->load->view('about');
+  }
+
   function pengaturanKecamatan()
   {
     $data['judul'] = 'Ubah Kecamatan';
