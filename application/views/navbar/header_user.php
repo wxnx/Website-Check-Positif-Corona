@@ -32,7 +32,7 @@
                     <a class="nav-item nav-link" href="<?= site_url('page/user') ?>">Beranda</a></li>
                     <a class="nav-item nav-link" href="<?= site_url('login/jadwal_test') ?>">Jadwal Test</a></li>
                     <a class="nav-item nav-link" href="<?= site_url('login/hasil_test') ?>">Hasil Test</a></li>
-                    <a class="nav-item nav-link" href="<?= site_url('data_penyebaran/index') ?>">Data Persebaran Corona</a></li>
+                    <a class="nav-item nav-link" href="<?= site_url('login/persebaran') ?>">Data Persebaran Corona</a></li>
                 </div>
                 <div class="navbar-nav">
                     <li>
@@ -40,16 +40,13 @@
                             <a class="nav-item nav-link" href="#" id="dropdownMenuLink" data-toggle="dropdown" aria-haspopup="true" aria-expanded="false">
                                 Pengaturan
                             </a>
-
                             <div class="dropdown-menu" aria-labelledby="dropdownMenuLink">
                                 <a class="dropdown-item" href="#">Hai,<?php echo $this->session->userdata('nama'); ?></a>
                                 <div class="dropdown-divider"></div>
-                                <a class="dropdown-item" href="<?= site_url('pengaturan/kecamatan') ?>">Ubah Kecamatan</a>
-                                <a class="dropdown-item" href="<?= site_url('pengaturan/password') ?>">Ubah Password</a>
+                                <a class="dropdown-item" href="<?= site_url('login/pengaturanKecamatan') ?>">Ubah Kecamatan</a>
+                                <a class="dropdown-item" href="<?= site_url('login/pengaturanPassword') ?>">Ubah Password</a>
                             </div>
-
                         </div>
-
                     </li>
                     <li><a class="nav-item nav-link" href="<?= site_url('login/logout') ?>">Keluar</a></li>
                 </div>

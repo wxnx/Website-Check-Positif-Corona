@@ -2,7 +2,6 @@
     <div class="row mt-5">
         <div class="col">
             <h3 class="text-center">Hasil Test COVID-19</h3>
-
             <table class="table mt-5">
                 <thead>
                     <tr>

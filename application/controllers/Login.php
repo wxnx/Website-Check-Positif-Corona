@@ -52,12 +52,11 @@ class Login extends CI_Controller
     }
   }
 
-  function hasil_test()
+  function daftar()
   {
-    $data['judul'] = 'Hasil Test COVID-19';
-    $datauser['datauser'] = $this->user_model->viewDataUser($this->session->userdata('email'));
-    $this->load->view('navbar/header_user', $data);
-    $this->load->view('user/hasil', $datauser);
+    $this->user_model->sendData();
+    $this->session->set_flashdata('flash', 'Pendaftaran diproses');
+    redirect('page/user');
   }
 
   function jadwal_test()
@@ -68,11 +67,34 @@ class Login extends CI_Controller
     $this->load->view('user/jadwal', $datauser);
   }
 
-  function daftar()
+  function hasil_test()
   {
-    $this->user_model->sendData();
-    $this->session->set_flashdata('flash', 'Pendaftaran diproses');
-    redirect('page/user');
+    $data['judul'] = 'Hasil Test COVID-19';
+    $datauser['datauser'] = $this->user_model->viewDataUser($this->session->userdata('email'));
+    $this->load->view('navbar/header_user', $data);
+    $this->load->view('user/hasil', $datauser);
+  }
+
+  function persebaran()
+  {
+    $data['judul'] = 'Data Penyebaran COVID-19';
+    $datapersebaran['datapenyebaran'] = $this->user_model->viewDataPenyebaranOnUser();
+    $this->load->view('navbar/header_user', $data);
+    $this->load->view('user/persebaran', $datapersebaran);
+  }
+
+  function pengaturanKecamatan()
+  {
+    $data['judul'] = 'Ubah Kecamatan';
+    $this->load->view('navbar/header_user', $data);
+    $this->load->view('user/ubah_kecamatan');
+  }
+
+  function pengaturanPassword()
+  {
+    $data['judul'] = 'Ubah Password';
+    $this->load->view('navbar/header_user', $data);
+    $this->load->view('user/ubah_password');
   }
 
   function logout()

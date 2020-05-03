@@ -20,7 +20,6 @@
 </head>
 
 <body>
-
   <div class="container">
     <div class="col-md-4 col-md-offset-4">
       <form class="form-signin" action="<?php echo site_url('login/auth'); ?>" method="post">
@@ -39,8 +38,7 @@
         <p>Belum punya akun? Silahkan Daftar <a href="<?= site_url('register/index') ?>">Disini</a></p>
       </form>
     </div>
-  </div> <!-- /container -->
-
+  </div>
   <script src="<?php echo base_url('assets/js/bootstrap.min.js'); ?>"></script>
 </body>
 

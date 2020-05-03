@@ -9,6 +9,7 @@ class Login_model extends CI_Model
 		$result = $this->db->get('tbl_users', 1);
 		return $result;
 	}
+
 	public function check_email($email)
 	{
 		$condition = "user_email =" . "'" . $email . "'";
@@ -23,6 +24,7 @@ class Login_model extends CI_Model
 			return false;
 		}
 	}
+
 	public function insert_new_profle($data)
 	{
 		$this->db->insert('tbl_users', $data);

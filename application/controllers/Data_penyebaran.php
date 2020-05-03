@@ -5,27 +5,20 @@ class Data_penyebaran extends CI_Controller
     function __construct()
     {
         parent::__construct();
-        $this->load->model('user_model');
-    }
-    function index()
-    {
-        $data['judul'] = 'Data Penyebaran COVID-19';
-        $datapersebaran['datapenyebaran'] = $this->user_model->viewDataPenyebaranOnUser();
-        $this->load->view('navbar/header_user', $data);
-        $this->load->view('user/persebaran', $datapersebaran);
+        $this->load->model('admin_model');
     }
 
-    function adminIndex()
+    function index()
     {
         $data['judul'] = 'Form Input Data Penyebaran COVID-19';
-        $datapersebaran['datapenyebaran'] = $this->user_model->viewDataPenyebaran();
+        $datapersebaran['datapenyebaran'] = $this->admin_model->viewDataPenyebaran();
         $this->load->view('navbar/header_admin', $data);
         $this->load->view('admin/persebaran', $datapersebaran);
     }
 
     function hapus($id)
     {
-        $this->user_model->hapusDataPenyebaran($id);
+        $this->admin_model->hapusDataPenyebaran($id);
         redirect('data_penyebaran/adminIndex');
     }
 
@@ -37,8 +30,7 @@ class Data_penyebaran extends CI_Controller
             'kecamatan' => $kecamatan,
             'jumlah' => $jumlah,
         );
-        $this->user_model->addDataPenyebaran($data);
-
+        $this->admin_model->addDataPenyebaran($data);
         redirect('data_penyebaran/adminIndex');
     }
 
@@ -49,7 +41,7 @@ class Data_penyebaran extends CI_Controller
         $data = array(
             'jumlah' => $jumlah,
         );
-        $this->user_model->editDataPenyebaran($id, $data);
+        $this->admin_model->editDataPenyebaran($id, $data);
         redirect('data_penyebaran/adminIndex');
     }
 }
