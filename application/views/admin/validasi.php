@@ -21,7 +21,7 @@
                             <td><?php echo $d->nama ?></td>
                             <td><?php echo $d->email ?></td>
                             <td><?php echo $d->jadwal ?></td>
-                            <td><button type="button" class="btn btn-" data-toggle="modal" data-target="#edit<? echo $d->id ?>">Validasi</button></td>
+                            <td><button type="button" class="btn btn-" data-toggle="modal" data-target="#edit<?php echo $d->id ?>">Validasi</button></td>
                             <td><a type="button" class="btn btn-danger" href="<?php echo base_url('index.php/validasi_pasien/hapus_data/' . $d->id); ?>" onClick="return confirm('Apakah Anda Yakin?')"><i class="fas fa-user-times"></i></a></td>
                         </form>
                     </tr>
@@ -33,9 +33,9 @@
 
 <?php $no = 1;
 foreach ($datapasien as $d) { ?>
-    <div class="modal fade" id="edit<? echo $d->id ?>">
+    <div class="modal fade" id="edit<?php echo $d->id ?>">
         <div class="modal-dialog">
-            <form method="post" action="<?php echo site_url('validasi_pasien/validasi') ?>">
+            <form method="post" action="<?php echo site_url('validasi_pasien/validasi'); ?>">
                 <div class="modal-content">
                     <div class="modal-header">
                         <h5 class="modal-title" id="exampleModalLabel">Input Jadwal</h5>
@@ -44,10 +44,10 @@ foreach ($datapasien as $d) { ?>
                         </button>
                     </div>
                     <div class="modal-body">
-                        <input type="hidden" class="form-control" id="formGroupExampleInput" placeholder="id" name="id" value="<? echo $d->id ?>" required>
+                        <input type="hidden" class="form-control" id="formGroupExampleInput" placeholder="id" name="id" value="<?php echo $d->id ?>" required>
                         <div class="form-group">
                             <label for="formGroupExampleInput">Jadwal</label>
-                            <input type="date" class="form-control" id="formGroupExampleInput" placeholder="jadwal" name="jadwal" value="<? echo $d->jadwal ?>" required>
+                            <input type="date" class="form-control" id="formGroupExampleInput" placeholder="jadwal" name="jadwal" value="<?php echo $d->jadwal ?>" required>
                         </div>
                     </div>
                     <div class="modal-footer">
